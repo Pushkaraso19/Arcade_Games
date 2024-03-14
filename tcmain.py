@@ -18,8 +18,9 @@ def turtle_crossing_main(root):
         if inp == 1:
             play_game()
         elif inp == 2:
-            tc_screen.bye()
+            tc_screen.setup(startx=10000,starty=10000)
             root.deiconify()
+            tc_screen.mainloop()
         else:
             sys.exit()
 

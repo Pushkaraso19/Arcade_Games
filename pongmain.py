@@ -18,8 +18,9 @@ def pong_main(root):
         if inp == 1:
             play_game()
         elif inp == 2:
-            pong_screen.bye()
-            root.deconify()
+            pong_screen.setup(startx=10000,starty=10000)
+            root.deiconify()
+            pong_screen.mainloop()
         else:
             sys.exit()
 
