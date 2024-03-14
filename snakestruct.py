@@ -8,6 +8,7 @@ RIGHT = 0
 
 class Snake:
     def __init__(self):
+        """initialises the snake"""
         self.segments = []
         self.create_snake()
         self.head = self.segments[0]

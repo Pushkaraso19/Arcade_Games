@@ -2,6 +2,7 @@ import random
 from turtle import Turtle
 class SnakeFood(Turtle):
     def __init__(self):
+        """generates the snake food"""
         super().__init__()
         self.shape("circle")
         self.penup()

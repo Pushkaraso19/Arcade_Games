@@ -7,6 +7,7 @@ from tcscoreboard import Scoreboard
 from tcdisplay import Display
 
 def turtle_crossing_main(root):
+    """main function of turtle crossing game"""
     tc_screen = Screen()
     tc_screen.setup(width=600, height=600)
     tc_screen.bgcolor("#2F2F2F")
@@ -14,17 +15,19 @@ def turtle_crossing_main(root):
     tc_screen.tracer(0)
 
     def start():
+        """shows the main menu for operations of turtle crossing game"""
         inp = tc_screen.numinput("New Game", "\n1.Play New Game\n2.Go to Main Menu\n3.Exit\nEnter Your Choice", minval=1, maxval=3)
         if inp == 1:
             play_game()
         elif inp == 2:
-            tc_screen.setup(startx=10000,starty=10000)
+            tc_screen.setup(startx=10000, starty=10000)
             root.deiconify()
             tc_screen.mainloop()
         else:
             sys.exit()
 
     def play_game():
+        """initiates the turtle crossing game"""
         tc_screen.clear()
         tc_screen.bgcolor("#2F2F2F")
         tc_screen.tracer(0)

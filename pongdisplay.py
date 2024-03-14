@@ -2,6 +2,7 @@ from turtle import Turtle
 
 class Display(Turtle):
     def __init__(self):
+        """displays the ball"""
         super().__init__()
         self.penup()
         self.goto(0, -300)

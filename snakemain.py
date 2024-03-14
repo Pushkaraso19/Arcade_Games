@@ -7,12 +7,14 @@ from snakefood import SnakeFood
 from snakescoreboard import SnakeScoreBoard
 
 def snake_main(root):
+    """main function of snake game"""
     snake_screen = Screen()
     snake_screen.title("Arcade Games")
     snake_screen.setup(600, 600)
     snake_screen.bgcolor("#2F2F2F")
 
     def snake_start():
+        """shows the main menu for operations of snake game"""
         inp = turtle.numinput("New Game", "\n1.Play New Game\n2.Reset Highscore\n3.Go to Main Menu\n4.Exit\nEnter Your Choice", minval=1, maxval=4)
         if inp == 1:
             snake_play_game()
@@ -28,6 +30,7 @@ def snake_main(root):
             sys.exit()
 
     def snake_play_game():
+        """initiates the snake game"""
         snake_screen.clear()
         snake_screen.bgcolor("#2F2F2F")
         snake_screen.tracer(0)

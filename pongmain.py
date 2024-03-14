@@ -7,6 +7,7 @@ from pongball import Ball
 from pongscoreboard import Score
 
 def pong_main(root):
+    """main function of ping pong game"""
     pong_screen = Screen()
     pong_screen.setup(800, 600)
     pong_screen.bgcolor("Black")
@@ -14,17 +15,19 @@ def pong_main(root):
     pong_screen.register_shape("Rectangle", ((50, -10), (50, 10), (-50, 10), (-50, -10)))
 
     def start():
+        """shows the main menu for operations of ping pong game"""
         inp = pong_screen.numinput("New Game", "\n1.Play New Game\n2.Go to Main Menu\n3.Exit\nEnter Your Choice", minval=1, maxval=3)
         if inp == 1:
             play_game()
         elif inp == 2:
-            pong_screen.setup(startx=10000,starty=10000)
+            pong_screen.setup(startx=10000, starty=10000)
             root.deiconify()
             pong_screen.mainloop()
         else:
             sys.exit()
 
     def play_game():
+        """initiates the ping pong game"""
         time.sleep(1/60)
         pong_screen.clear()
         pong_screen.bgcolor("Black")

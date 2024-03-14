@@ -3,6 +3,7 @@ from turtle import Turtle
 class Display(Turtle):
 
     def __init__(self):
+        """creates the display of turtle crossing game"""
         super().__init__()
         self.penup()
         self.color("White")
@@ -17,6 +18,7 @@ class Display(Turtle):
         self.forward(600)
 
     def road(self):
+        """creates the roads on the display"""
         y = -240
         for i in range(8):
             self.penup()

@@ -12,11 +12,13 @@ for z in range(-215, 215, 50):
 class CarManager:
 
     def __init__(self):
+        """initialises the cars"""
         super().__init__()
         self.all_cars = []
         self.car_speed = STARTING_MOVE_DISTANCE
 
     def create_cars(self):
+        """creates the cars in turtle crossing game"""
         random_chance = random.randint(1, 6)
         if random_chance == 1:
             new_car = Turtle("square")
@@ -28,8 +30,10 @@ class CarManager:
             self.all_cars.append(new_car)
 
     def move_cars(self):
+        """moves the cars"""
         for car in self.all_cars:
             car.backward(self.car_speed)
 
     def increase_speed(self):
+        """according to level increases the cars moving speed"""
         self.car_speed += MOVE_INCREMENT

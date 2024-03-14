@@ -2,6 +2,7 @@ from turtle import Turtle
 
 class SnakeScoreBoard(Turtle):
     def __init__(self):
+        """creates the scoreboard of snake game"""
         super().__init__()
         self.score = 0
         with open("score_record.txt") as data:
@@ -19,6 +20,7 @@ class SnakeScoreBoard(Turtle):
         self.update_score()
 
     def check_highscore(self):
+        """checks the current user score with the highscore"""
         with open("score_record.txt") as data:
             self.highscore = int(data.read())
         if self.score > self.highscore:
@@ -27,6 +29,7 @@ class SnakeScoreBoard(Turtle):
         self.update_score()
 
     def reset(self):
+        """resets the highscore"""
         self.check_highscore()
         self.score = 0
         self.update_score()
@@ -37,6 +40,6 @@ class SnakeScoreBoard(Turtle):
         self.write(f"Score: {self.score} \t\t\t\t\tHigh Score: {self.highscore}", False, align="center", font=('Tahoma', 15, 'normal'))
 
     def game_over(self):
-        """stops the game"""
+        """shows that game is over and stops the game"""
         self.goto(0, 240)
         self.write("GAME OVER!", False, align="center", font=('Tahoma', 15, 'normal'))
